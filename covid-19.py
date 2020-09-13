@@ -67,32 +67,32 @@ if (input_s != ""):
     plt.show()
     st.pyplot()
 
-    
-    if st.checkbox("Show confirm case fron all over the world", False):
-        fig = px.choropleth(data, locations="country_region", 
-                        locationmode='country names', color="confirmed", 
-                        hover_name="country_region", range_color=[1,7000], 
-                        color_continuous_scale="aggrnyl", 
-                        title='Countries with Confirmed Cases')
-        st.plotly_chart(fig)
+    if st.checkbox("Click checkbox Visulization for all over the world", False):
+	    if st.checkbox("Show confirm case fron all over the world", False):
+	        fig = px.choropleth(data, locations="country_region", 
+	                        locationmode='country names', color="confirmed", 
+	                        hover_name="country_region", range_color=[1,7000], 
+	                        color_continuous_scale="aggrnyl", 
+	                        title='Countries with Confirmed Cases')
+	        st.plotly_chart(fig)
 
-    if st.checkbox("Show deaths fron all over the world", False):
-        fig_1 = px.choropleth(data, locations="country_region", 
-                        locationmode='country names', color="deaths", 
-                        hover_name="country_region", range_color=[1,7000], 
-                        color_continuous_scale="aggrnyl", 
-                        title='Countries with Deaths')
-        st.plotly_chart(fig_1)
+	    if st.checkbox("Show deaths fron all over the world", False):
+	        fig_1 = px.choropleth(data, locations="country_region", 
+	                        locationmode='country names', color="deaths", 
+	                        hover_name="country_region", range_color=[1,7000], 
+	                        color_continuous_scale="aggrnyl", 
+	                        title='Countries with Deaths')
+	        st.plotly_chart(fig_1)
 
-        
+	        
 
-    if st.checkbox("Show recovered case fron all over the world", False):
-        fig_2 = px.choropleth(data, locations="country_region", 
-                        locationmode='country names', color="recovered", 
-                        hover_name="country_region", range_color=[1,7000], 
-                        color_continuous_scale="aggrnyl", 
-                        title='Countries with Recovered Cases')
-        st.plotly_chart(fig_2)
+	    if st.checkbox("Show recovered case fron all over the world", False):
+	        fig_2 = px.choropleth(data, locations="country_region", 
+	                        locationmode='country names', color="recovered", 
+	                        hover_name="country_region", range_color=[1,7000], 
+	                        color_continuous_scale="aggrnyl", 
+	                        title='Countries with Recovered Cases')
+	        st.plotly_chart(fig_2)
     
 
     st.header("Which data you want to visulize")
@@ -124,11 +124,11 @@ if (input_s != ""):
 
 
     st.title("State Vise analysis in United States Of America")
-    PROVINCE_STATE = data['province_state'].unique()
+    PROVINCE_STATE = US_data['province_state'].unique()
     PROVINCE_STATE_SELECTED = st.multiselect('Select State from the list', PROVINCE_STATE)
 
     if(PROVINCE_STATE_SELECTED != []):
-        #mask_state = data['province_state'].isin(PROVINCE_STATE_SELECTED)
+        mask_state = data['province_state'].isin(PROVINCE_STATE_SELECTED)
         
 
         for i in PROVINCE_STATE_SELECTED:
