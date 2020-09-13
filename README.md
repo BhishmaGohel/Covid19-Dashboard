@@ -4,4 +4,7 @@ This repo is basically Covid-19 day to day update dashboard using streamlit.
 In this project I used the streamlit library which is library of python. Using streamlit library we can make Simple and Easy to use GUI.
 
 Here is some screen-shot of the GUI.
-![ss1](/images/s)
+![ss1](/images/Screenshot (164).png)
+![ss2](/images/Screenshot (165).png)
+![ss3](/images/Screenshot (166).png)
+![ss4](/images/Screenshot (167).png)
